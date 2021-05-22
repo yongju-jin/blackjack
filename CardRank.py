@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import IntEnum
 
 
-class CardRank(Enum):
+class CardRank(IntEnum):
     Two = 2
     Three = 3
     Four = 4
@@ -15,6 +15,10 @@ class CardRank(Enum):
     Queen = 12
     King = 13
     Ace = 14
+
+    @staticmethod
+    def tens():
+        return [CardRank.Ten, CardRank.Jack, CardRank.Queen, CardRank.King]
 
 
 if __name__ == '__main__':
