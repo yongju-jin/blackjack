@@ -9,10 +9,15 @@ import random
 class Deck:
     def __init__(self):
         self.cards = []
+        self.__add_card()
+
+    def __add_card(self):
+        cards = []
         for suit in CardSuit:
             for rank in CardRank:
-                self.cards.append(Card(suit, rank))
-        random.shuffle(self.cards)
+                cards.append(Card(suit, rank))
+        random.shuffle(cards)
+        self.cards = self.cards + cards
 
 
 if __name__ == '__main__':
