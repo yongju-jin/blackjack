@@ -5,7 +5,12 @@ from CardRank import CardRank
 
 class PlayCard:
     def __init__(self, cards: list):
-        assert len(cards) == 2
+        if len(cards) != 2:
+            raise AssertionError
+
+        if cards[0] == cards[1]:
+            raise AssertionError
+
         self.cards = cards
 
     def __str__(self):
@@ -14,7 +19,7 @@ class PlayCard:
             ret += f'{card}\n'
         return ret
 
-    def is_black_jack(self):
+    def is_black_jack(self) -> bool:
         ranks = list(map(lambda card: card.rank, self.cards))
         ranks.sort()
         print(ranks)
