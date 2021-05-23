@@ -46,3 +46,8 @@ class TestPlayCard(TestCase):
         print(play_card)
         self.assertFalse(play_card.is_black_jack())
 
+    def test_open_first_card(self):
+        first_card = self.hearts_nine
+        play_card = PlayCard([first_card, self.hearts_two])
+        open_card = play_card.open_first_card()
+        self.assertEqual(first_card, open_card)

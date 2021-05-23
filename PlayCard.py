@@ -28,6 +28,9 @@ class PlayCard:
         else:
             return False
 
+    def open_first_card(self) -> Card:
+        return self.cards[0]
+
 
 if __name__ == '__main__':
     playCard = PlayCard([Card(CardSuit.Hearts, CardRank.Ace), Card(CardSuit.Clover, CardRank.Jack)])
